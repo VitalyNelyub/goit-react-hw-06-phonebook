@@ -8,7 +8,7 @@ import { addContact } from 'redux/store';
 export default function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contact);
-  console.log(contacts);
+  // console.log(contacts);
 
   const addContactBtn = e => {
     e.preventDefault();
