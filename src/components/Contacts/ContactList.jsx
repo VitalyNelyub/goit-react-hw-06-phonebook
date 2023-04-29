@@ -18,8 +18,15 @@ export default function ContactList() {
     contact.name.toLocaleLowerCase().includes(filteredContacts)
   );
 
-  return onFilter.map(contact => (
+  return onFilter.length > 0 ? (
+  onFilter.map(contact => (
     <li key={contact.id} className={css.contact__item}>
+      <img
+        src={'https://cdn-icons-png.flaticon.com/512/3455/3455271.png'}
+        alt={contact.name}
+        width={40}
+        height={40}
+      />
       <p>{contact.name}:</p>
       <span>{contact.number}</span>
       <button
@@ -31,8 +38,10 @@ export default function ContactList() {
         Delete
       </button>
     </li>
-  ));
-}
+  ))
+) : <p className={css.tag}>No contacts</p>;
+};
+
 
 ContactList.propType = {
   filteredContact: PropTypes.func.isRequired,
