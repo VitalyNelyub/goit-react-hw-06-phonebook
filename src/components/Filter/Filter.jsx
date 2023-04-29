@@ -1,14 +1,14 @@
 import css from '../Filter/Filter.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { filterContacts } from 'redux/reducers';
+import { filterContact } from 'redux/slice';
 
 export default function Filter() {
   const dispatch = useDispatch();
 
 
   const filtration = e => {
-    dispatch(filterContacts(e.target.value))
+    dispatch(filterContact(e.target.value))
   };
 
   return (

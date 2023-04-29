@@ -2,7 +2,8 @@ import { nanoid } from 'nanoid';
 import css from '../ContactForm/ContactForm.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/reducers';
+import { addContact } from 'redux/slice';
+
 
 export default function ContactForm() {
   const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { reducer as rootReducer } from './reducers';
+import { contactsReducer as rootReducer } from '../redux/slice';
 import {
   persistStore,
   persistReducer,
@@ -31,8 +31,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-// export default () => {
-//   let store = createStore(persistedReducer)
-
-//   return { store, persistor }
-// }
