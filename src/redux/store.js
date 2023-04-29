@@ -1,6 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createAction, createReducer } from '@reduxjs/toolkit';
-// import { state } from 'fs';
+// import { persistStore, persistReducer } from 'redux-persist';
+// import storage from 'redux-persist/lib/storage';
+
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// };
+
+// const persistedReducer = persistReducer(persistConfig, myReducer);
+
+// const persistor = persistStore(store);
 
 export const addContact = createAction('addContact');
 export const deleteContact = createAction('deleteContact');
@@ -17,17 +27,13 @@ const initialFilter = '';
 
 const myReducer = createReducer(initialContacts, {
   [addContact]: (state, action) => [...state, action.payload],
-  // [addContact]: (state, action) => console.log(state),
 
   [deleteContact]: (state, action) =>
     state.filter(contact => contact.id !== action.payload),
 });
 
 const myReducerFilter = createReducer(initialFilter, {
-  [filterContacts]: (state, action) => state = action.payload,
-//   [filterContacts]: (state, action) =>
-    // console.log(state),
-//     console.log(action.payload),
+  [filterContacts]: (state, action) => (state = action.payload),
 });
 
 export const store = configureStore({
@@ -36,3 +42,9 @@ export const store = configureStore({
     filter: myReducerFilter,
   },
 });
+
+// export default () => {
+//   let store = createStore(persistedReducer)
+
+//   return { store, persistor }
+// }
