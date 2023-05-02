@@ -4,9 +4,11 @@
   border-radius: 12px;
   margin: 40px auto;
   padding: 40px;
-  background-color: rgb(26, 26, 99);
-background: rgb(48,87,88);
-background: linear-gradient(315deg, rgba(48,87,88,1) 0%, rgba(54,101,129,0.9725140056022409) 100%);
+  background: linear-gradient(
+    315deg,
+    rgba(48, 87, 88, 1) 0%,
+    rgba(54, 101, 129, 0.9725140056022409) 100%
+  );
 }
 
 .form__title,
@@ -51,11 +53,9 @@ h2 {
 }
 
 .form__input:focus {
-  border: 2px solid rgb(226, 88, 64);;
+  border: 2px solid rgb(226, 88, 64);
 }
 
 label {
   color: rgb(40, 185, 185);
 }
-
-

@@ -1,3 +1,4 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from '../Contacts/ContactList.module.css';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,6 +13,7 @@ export default function ContactList() {
 
   const delContact = contact => {
     dispatch(deleteContact(contact.id));
+    Notify.failure('The contact was successfully deleted');
   };
 
   const onFilter = contactsList.filter(contact =>

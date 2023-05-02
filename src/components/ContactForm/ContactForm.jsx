@@ -1,9 +1,10 @@
+import { Report } from 'notiflix/build/notiflix-report-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { nanoid } from 'nanoid';
 import css from '../ContactForm/ContactForm.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/slice';
-
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -17,9 +18,10 @@ export default function ContactForm() {
       id: nanoid(),
     };
     if (contacts.find(contact => contact.name === newContact.name)) {
-      alert('This contact is in your phonebook');
-    } else {
+      Report.failure('Attention', 'This contact is in your phonebook', 'Okay');
+     } else {
       dispatch(addContact(newContact));
+      Notify.success('The contact was successfully added');
     }
     e.target.name.value = '';
     e.target.number.value = '';
