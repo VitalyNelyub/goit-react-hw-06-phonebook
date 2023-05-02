@@ -27,17 +27,18 @@ h2 {
 
 .form__btn {
   width: 200px;
-
   font-weight: 600;
   padding: 6px;
   background-color: rgb(109, 109, 223);
   border-radius: 14px;
   transition: all 250ms;
+  cursor: pointer;
 }
 
 .form__btn:hover {
   transform: scale(1.1);
   box-shadow: 10px 15px 5px rgba(86, 84, 84, 0.56);
+  
 }
 
 .form__input {
@@ -50,6 +51,7 @@ h2 {
   border-radius: 4px;
   color: #fff;
   outline: none;
+  cursor: pointer;
 }
 
 .form__input:focus {
